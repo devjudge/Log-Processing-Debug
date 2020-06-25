@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+
+from restapi import views
 from restapi.views import *
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', index),
+    url(r'^api/process-logs/', views.Post_log.as_view())
 ]
